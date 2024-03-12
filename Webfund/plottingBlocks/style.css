@@ -42,10 +42,11 @@
 .sub-content1,
 .sub-content2,
 .sub-content3 {
-    height: 200px;
-    width: 210px;
+    height: 400px;
+    width: 400px;
     background-color: yellow;
-    margin: 20px 10px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .sub-content1,
@@ -56,11 +57,11 @@
 
 
 #advertisement {
-    height: 120px;
-    width: 660px;
+    height: 200px;
+    width: 75%;
     background-color: purple;
     position: relative;
-    top: 50px;
+    top: 500px;
     left: 20px;
 
 }
