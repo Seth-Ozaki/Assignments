@@ -1,0 +1,62 @@
+* {
+    background-color: #f7f7ef;
+}
+
+h1 {
+    font-size: 300%;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.row1 {
+    background-color: #58c7e5;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.row2 {
+    background-color: #d5a5bb;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.row3 {
+    background-color: #fcfcfc;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+p {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+img.octocat {
+    height: 200px;
+}
