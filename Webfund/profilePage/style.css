@@ -74,10 +74,9 @@ a {
 .section2 {
     display: flex;
     margin-left: 5%;
-    margin-right: 5%;
     flex-direction: column;
-    flex: 3;
-    gap: 40px;
+    flex: 4;
+    gap: 20px;
 }
 
 .card {
@@ -124,7 +123,7 @@ img.profilePic {
     margin-bottom: 20px;
 }
 
-img.icon {
+.icon {
     height: 35px;
     width: 25px;
     margin-right: 5px;
@@ -145,7 +144,7 @@ img.icon {
     font-weight: 600;
 }
 
-img.icon2 {
+.icon2 {
     height: 25px;
     width: 25px;
     margin-right: 5px;
@@ -154,26 +153,20 @@ img.icon2 {
 /* --------------------------------------------------------- */
 
 .edu {
-    height: 200px;
     border: 5px solid black;
     background-color: white;
-    display: flex;
-    position: relative;
-    padding: 100px 0px 10px 20px;
 }
 
 .banner2 {
     height: 100px;
-    width: 100%;
-    position: absolute;
-    color: white;
     background-color: black;
-    font-size: 200%;
-    text-indent: 10px;
     display: flex;
     align-items: center;
-    top: 0px;
-    left: 0px;
+    padding-left: 20px;
+}
+
+.banner2>h1 {
+    color: white;
 }
 
 .info2 {
@@ -211,25 +204,18 @@ img.icon2 {
 }
 
 .connect {
-    height: 200px;
     border: 5px solid black;
     background-color: white;
-    display: flex;
-    position: relative;
-    padding: 100px 0px 10px 20px;
 }
 
 .banner3 {
     height: 100px;
-    width: 100%;
-    position: absolute;
     background-color: black;
     font-size: 200%;
     text-indent: 10px;
     display: flex;
+    align-items: flex-start;
     align-items: center;
-    top: 0px;
-    left: 0px;
 }
 
 .number {
@@ -245,11 +231,11 @@ img.icon2 {
 }
 
 /* why doesnt .header>p work? */
-p.header {
+.header {
     color: white;
 }
 
-img.icon3 {
+.icon3 {
     height: 60px;
     width: 60px;
     margin: 10px 5px;
@@ -265,37 +251,30 @@ img.icon3 {
 .namepic {
     display: flex;
     align-items: center;
-    pad: 20px;
+    gap: 20px;
     flex: 2;
 }
 
 .response {
     display: flex;
     flex: 1;
-    pad: 20px;
+    gap: 20px;
 }
 
 /* ------------------------------------- */
 .connect1 {
-    height: auto;
     border: 5px solid black;
     background-color: white;
-    display: flex;
-    position: relative;
-    padding: 100px 0px 10px 20px;
 }
 
 .banner4 {
     height: 100px;
-    width: 100%;
-    position: absolute;
     background-color: black;
     font-size: 150%;
     text-indent: 10px;
     display: flex;
+    align-items: flex-start;
     align-items: center;
-    top: 0px;
-    left: 0px;
 }
 
 .banner5 {
@@ -307,6 +286,4 @@ img.icon3 {
     display: flex;
     align-content: flex-end;
     align-items: center;
-    bottom: 0px;
-    left: 0px;
 }
