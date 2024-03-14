@@ -104,7 +104,7 @@ a {
     position: absolute;
 }
 
-img.profilePic {
+.profilePic {
     height: 175px;
     width: 175px;
     border: 4px outset silver;
