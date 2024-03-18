@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="banner">
+            <h1>Dojonary</h1>
+            <input type="search" name="search" class="search" placeholder="Search">
+            <button class="login" onclick="login(this)">Login</button>
+        </div>
+        <div class="content">
+            <div class="leftContent">
+                <div class="top">
+                    <div class="word">
+                        <h1>ninja</h1>
+                        <h3>noun</h3>
+                        <h4>Plural: ninjas</h4>
+                        <button class="likeBtn" value="0" onclick="liked(this)">0 likes</button>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            A practitionar skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="word">
+                        <h1>ninja</h1>
+                        <h3>noun</h3>
+                        <h4>Plural: ninjas</h4>
+                        <button class="likeBtn" value="0" onclick="liked(this)">0 likes</button>
+                    </div>
+                    <div class="description">
+                        <h2>
+                            A <a href="#">programmer</a> who breaks down prblems with <a href="#">zen</a>-like focus
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent">
+                <div class="right">
+                    <h1>Dojonary is defined by <b>YOU</b></h1>
+                    <button class="defBtn" onclick="bye(this)">Add Definition</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
