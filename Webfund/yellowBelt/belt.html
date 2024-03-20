@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Belt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="headerTop">
+                <div class="logo">
+                    <img src="./images/leaf.png" alt="EasyBay leaf logo">
+                    <h1>EasyBay</h1>
+                </div>
+                <input type="search" placeholder="  Search for anything" class="search">
+                <p class="options">Sign In</p>
+                <input type="image" name="cart" class="cartBtn" src="./images/cart-dark.png" alt="Shopping cart icon"
+                    onclick="shopping()">
+            </div>
+            <div class="headerBottom">
+                <p class="options">Aeonium</p>
+                <p class="options">Andormischus</p>
+                <p class="options">Agave</p>
+                <p class="options">Aloe</p>
+                <p class="options">Anacampseros</p>
+                <p class="options">Aristaloe</p>
+                <p class="options">More...</p>
+            </div>
+        </div>
+        <div class="title">
+            <h2>Your Sourse for Serious Succulent Specialties</h2>
+        </div>
+        <div class="content">
+            <div class="topContent">
+                <div class="topLeft">
+                    <div class="discover">
+                        <h1>Discover succulent varieties one pot or rack at a time!</h1>
+                        <div class="discoverBottom">
+                            <h1 class="arrow">Discover </h1>
+                            <img src="./images/arrow-light.png" alt="Arrow pointing right">
+                        </div>
+                    </div>
+                    <img src="./images/succulents-1.jpg" alt="Image of succulents" onmouseover="hover(this)"
+                        onmouseleave="hoverOut(this)">
+                </div>
+                <div class="topRight">
+                    <div class="goodSucc">
+                        <img src="./images/aloe-m.jpg" alt="Aloevera Plant">
+                    </div>
+                    <div class="soothing">
+                        <p>Soothing aloe</p>
+                        <img src="./images/arrow-light.png" alt="Arrow pointing right">
+                    </div>
+                </div>
+            </div>
+            <div class="bottomContent">
+                <div class="size">
+                    <img src="./images/aeonium-s.jpg" alt="Aeonium plant">
+                    <p>Aeonium</p>
+                </div>
+                <div class="size">
+                    <img src="./images/aloe-s.jpg" alt="Aloe plant">
+                    <p>Aloe</p>
+                </div>
+                <div class="size">
+                    <img src="./images/cactus-s.jpg" alt="Cactus plant">
+                    <p>Cactus</p>
+                </div>
+                <div class="size">
+                    <img src="./images/echeveria-s.jpg" alt="Echeveriaplant">
+                    <p>Echeveria</p>
+                </div>
+                <div class="size">
+                    <img src="./images/sedum-s.jpg" alt="Sedum plant">
+                    <p>Sedum</p>
+                </div>
+                <div class="size">
+                    <img src="./images/sempervivum-s.jpg" alt="Sempervivum plant">
+                    <p>Sempervivum</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup">
+            <img src="./images/alert-dark.png" alt="Alert icon">
+            <p>
+                This site makes use of third-party cookies,
+                by clicking "I accept" you agree to the terms outlined in our
+                <a href="#">cookie policy.</a>
+            </p>
+            <button class="accept" onclick="accepted()">I Accept</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
