@@ -248,6 +248,8 @@ a {
 
 }
 
+
+
 .namepic {
     display: flex;
     align-items: center;
@@ -255,11 +257,15 @@ a {
     flex: 2;
 }
 
+
+
 .response {
     display: flex;
     flex: 1;
     gap: 20px;
 }
+
+
 
 /* ------------------------------------- */
 .connect1 {

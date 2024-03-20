@@ -36,8 +36,8 @@
                             <p>Developer | Engineer | Problem Solver</p>
                             <p>Master of shadows and the internet!</p>
                         </div>
-                        <div class="gear">
-                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">
+                        <div class="gear" onclick="nameChange()">
+                            <a href="#">
                                 <img src="./icons/gear.png" alt="Gear Icon" class="icon2">
                                 Edit Profile
                             </a>
@@ -59,7 +59,7 @@
                 <div class="connect">
                     <div class="banner3">
                         <div class="number">
-                            <p>2</p>
+                            <p id="amount">2</p>
                         </div>
                         <p class="header">Connections Request</p>
                     </div>
@@ -70,8 +70,9 @@
                                 <h1>Todd E.</h1>
                             </div>
                             <div class="response">
-                                <img src="./icons/accept-circle.png" alt="accept icon" class="icon3">
-                                <img src="./icons/close-circle.png" alt="decline icon" class="icon3">
+                                <img src="./icons/accept-circle.png" alt="accept icon" class="icon3" onclick="accept()">
+                                <img src="./icons/close-circle.png" alt="decline icon" class="icon3"
+                                    onclick="decline()">
                             </div>
                         </div>
                         <div class="friend">
@@ -80,8 +81,9 @@
                                 <h1>Phil K.</h1>
                             </div>
                             <div class="response">
-                                <img src="./icons/accept-circle.png" alt="accept icon" class="icon3">
-                                <img src="./icons/close-circle.png" alt="decline icon" class="icon3">
+                                <img src="./icons/accept-circle.png" alt="accept icon" class="icon3" onclick="accept()">
+                                <img src="./icons/close-circle.png" alt="decline icon" class="icon3"
+                                    onclick="decline()">
                             </div>
                         </div>
                     </div>
@@ -89,7 +91,7 @@
                 <div class="connect1">
                     <div class="banner4">
                         <div class="number">
-                            <p>500+</p>
+                            <p id="amount1">500</p>
                         </div>
                         <p class="header">Your Connections</p>
                     </div>
@@ -127,6 +129,8 @@
         </div>
 
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
