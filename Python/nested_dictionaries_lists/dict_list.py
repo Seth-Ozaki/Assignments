@@ -1,3 +1,11 @@
+# Change the value 10 in x to 15. Once you're done, x should now be [ [5,2,3], [15,8,9] ].
+
+# Change the last_name of the first student from 'Jordan' to 'Bryant'
+
+# In the sports_directory, change 'Messi' to 'Andres'
+
+# Change the value 20 in z to 30
+
 x = [ [5,2,3], [10,8,9] ] 
 students = [
     {'first':  'Michael', 'last' : 'Jordan'},
@@ -23,6 +31,9 @@ z[0]['y']=30
 print(z)
 
 #-----------------------------------------------------------------------------------------------------------
+# Create a function  that, given a list of dictionaries, 
+# the function loops through each dictionary in the list and prints each key and the associated value. 
+# For example, given the following list: 
 
 students = [
     {'first_name':  'Michael', 'last_name' : 'Jordan'},
@@ -53,7 +64,9 @@ last(students)
 print('------------------------------')
 
 # ----------------------------------------------------------------------------
-
+# Create a function that given a dictionary whose values are all lists, 
+# prints the name of each key along with the size of its list, 
+# and then prints the associated values within each key's list. 
 
 dojo = {
     'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
