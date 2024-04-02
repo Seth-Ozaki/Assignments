@@ -16,7 +16,7 @@
 
 
 
-class account:
+class Account:
 
     def __init__(self, int_rate = 0.01, balance = 0.00):
         if int_rate == 0.01:
@@ -44,10 +44,10 @@ class account:
         return self
 
 
-account1 = account(balance=100)
-account2 = account(1, 100)
+account1 = Account(balance=100)
+account2 = Account(1, 100)
 # to check for witdrawl penalty
-account3 = account(balance=100)
+account3 = Account(balance=100)
 
 print(account1.deposit(5).deposit(5).deposit(5).withdraw(15).yield_interest().display_account_info())
 print(account2.deposit(1000).deposit(2299).withdraw(600).withdraw(200).withdraw(80).withdraw(29).yield_interest().display_account_info())
