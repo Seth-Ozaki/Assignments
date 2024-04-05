@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Counter</h1>
+        </div>
+        <div class="number">
+            <h2>{{session['count']}}</h2>
+        </div>
+        <div class="buttons">
+            <a href="/"><button>Click Me!</button></a>
+            <a href="/destroy"><button>Destroy</button></a>
+            <a href="/two"><button>Add 2</button></a>
+            <a href="/reset"><button>Reset</button></a>
+            <form action="/plus" method="post">
+                <label for="amount">How much would you like to add:</label>
+                <input type="number" name="amount">
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
