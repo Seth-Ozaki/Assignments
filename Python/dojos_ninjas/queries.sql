@@ -1,3 +1,31 @@
+-- Forward engineer the dojos_ninjas ERD
+
+-- Create a .txt file where you'll save each of your queries from below
+
+-- Query: Create 3 new dojos
+
+-- Query: Delete the 3 dojos you just created
+
+-- Query: Create 3 more dojos
+
+-- Query: Create 3 ninjas that belong to the first dojo
+
+-- Query: Create 3 ninjas that belong to the second dojo
+
+-- Query: Create 3 ninjas that belong to the third dojo
+
+-- Query: Retrieve all the ninjas from the first dojo
+
+-- Query: Retrieve all the ninjas from the last dojo
+
+-- Query: Retrieve the last ninja's dojo
+
+-- Query: Use a JOIN to retrieve the ninja with id 6 as well as the data from its dojo. 
+-- Be sure to do this in one query using a join statement.
+
+-- Query: Use a JOIN to retrieve all the ninjas as well as that ninja's dojo, 
+-- note, you will see repeated data on dojos as a dojo can have many ninjas!
+
 USE dojo_ninjas;
 SET SQL_SAFE_UPDATES = 0;
 DELETE FROM ninjas WHERE id IS NOT NULL;
