@@ -1,5 +1,5 @@
 
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 from datetime import datetime
 
 class User:
@@ -14,9 +14,9 @@ class User:
 
     @staticmethod
     def clear():
-        query = "ALTER TABLE users AUTO_INCREMENT = 1;"
-        connectToMySQL(User.DB).query_db(query)
         query= "SET SQL_SAFE_UPDATES = 0 "
+        connectToMySQL(User.DB).query_db(query)
+        query = "ALTER TABLE users AUTO_INCREMENT = 1;"
         connectToMySQL(User.DB).query_db(query)
         query= "DELETE FROM users WHERE first_name IS NOT null;"
         connectToMySQL(User.DB).query_db(query)
