@@ -15,7 +15,7 @@
             <h1>Hello, {{one_user.first_name}} </h1>
         </div>
         <div style="display: flex; justify-content: space-between;">
-            <div class="text-light">
+            <div class="text-light table-">
                 <h3>All posted recipes:</h3>
             </div>
             <div>
@@ -37,6 +37,11 @@
                     <td>{{one_recipe.name}}</td>
                     <td>{{one_recipe.under}}</td>
                     <td>{{one_recipe.user.first_name}}</td>
+                    <td><a class="btn btn-primary" href="/recipe/{{one_recipe.id}}" role="button">Show Recipe</a></td>
+                    {% if one_recipe.user_id == session['user_id'] %}
+                    <td><a class="btn btn-primary" href="/edit/{{one_recipe.id}}" role="button">Edit</a></td>
+                    <td><a class="btn btn-primary" href="/delete_recipe/{{one_recipe.id}}" role="button">delete</a></td>
+                    {% endif %}
                 </tr>
                 {%endfor%}
             </tbody>

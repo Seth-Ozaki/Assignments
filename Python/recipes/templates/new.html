@@ -12,10 +12,11 @@
 <body class="bg-dark">
     <div class="page bg-dark" style="display: flex; padding: 10%;">
         <div class="left container text-light">
-            <div class="text-light">
+            <div class="text-light" style="display: flex; justify-content: space-between;">
                 <h1>Add a new recipe</h1>
+                <a class="btn btn-primary" href="/logged/{{session['user_id']}}" role="button">Back to recipes</a>
             </div>
-            {% with messages = get_flashed_messages(category_filter=["register"]) %}
+            {% with messages = get_flashed_messages(category_filter=["add_recipe"]) %}
             {% if messages %}
             {% for message in messages %}
             <p>{{message}}</p>

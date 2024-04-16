@@ -13,6 +13,7 @@ def start():
     User.clear()
     return render_template('home.html')
 
+
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -41,6 +42,7 @@ def register():
     User.register(data)
     user_in_db = User.get_by_email(data)
     session['user_id'] = user_in_db.id
+    session['name'] = user_in_db.first_name
     return redirect(f'/logged/{session['user_id']}')
 
 
@@ -56,7 +58,7 @@ def login():
         return redirect('/home')
     
     session['user_id'] = user_in_db.id
-
+    session['name'] = user_in_db.first_name
     return redirect(f'/logged/{session['user_id']}')
 
 @app.route('/logged/<int:id>')
@@ -73,6 +75,8 @@ def new_recipe(id):
 
 @app.route('/add_recipe/<int:id>', methods=['POST'])
 def add_recipe(id):
+    if not  Recipe.validate_recipe(request.form):
+        return redirect(f'/new_recipe/{id}')
     data = {
         "name":request.form['name'],
         "under":request.form['under'],
@@ -84,6 +88,27 @@ def add_recipe(id):
     Recipe.add_recipe(data)
     return redirect(f'/logged/{id}')
 
+@app.route('/recipe/<int:id>')
+def recipe(id):
+    recipe = Recipe.get_recipe(id)
+    return render_template('recipe.html', one_recipe = recipe)
+
+@app.route('/delete_recipe/<int:id>')
+def delete_recipe(id):
+    Recipe.delete_recipe(id)
+    return redirect(f'/logged/{session['user_id']}')
+
+@app.route('/edit/<int:id>')
+def edit(id):
+    recipe = Recipe.get_recipe(id)
+    return render_template('edit.html', one_recipe = recipe)
+
+@app.route('/submit_edit/<int:id>', methods=['POST'])
+def submit_edit(id):
+    if not  Recipe.validate_recipe(request.form):
+        return redirect(f'/edit/{id}')
+    Recipe.submit_edit(request.form)
+    return redirect(f'/recipe/{id}')
 
 if __name__=='__main__':
     app.run(debug=True)
