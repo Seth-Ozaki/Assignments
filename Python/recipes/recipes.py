@@ -25,7 +25,7 @@ class Recipe:
         connectToMySQL(Recipe.DB).query_db(query)
         query= "DELETE FROM recipes WHERE name IS NOT null;"
         connectToMySQL(Recipe.DB).query_db(query)
-        query = "ALTER TABLE recipes AUTO_INCREMENT = 1;"
+        
 
     @classmethod
     def add_recipe(cls, data):
@@ -39,7 +39,7 @@ class Recipe:
         query = "SELECT * FROM recipes JOIN users ON users.id = recipes.user_id"
         
         results = connectToMySQL(Recipe.DB).query_db( query )
-        user = cls(results[0]) 
+        # user = cls(results[0])
         recipes = []
         for recipe in results:
             new_recipe = cls(recipe)

@@ -24,7 +24,7 @@ class User:
         connectToMySQL(User.DB).query_db(query)
         query= "DELETE FROM users WHERE first_name IS NOT null;"
         connectToMySQL(User.DB).query_db(query)
-        query = "ALTER TABLE users AUTO_INCREMENT = 1;"
+
 
 
     @staticmethod

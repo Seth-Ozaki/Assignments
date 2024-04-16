@@ -9,8 +9,8 @@ bcrypt=Bcrypt(app)
 
 @app.route('/')
 def start():
-    User.clear()
     Recipe.clear()
+    User.clear()
     return render_template('home.html')
 
 @app.route('/home')
