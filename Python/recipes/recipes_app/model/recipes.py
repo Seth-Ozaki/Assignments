@@ -1,6 +1,6 @@
-from mysqlconnection import connectToMySQL
+from recipes_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-from users import User
+from recipes_app.model.users import User
 
 
 class Recipe:

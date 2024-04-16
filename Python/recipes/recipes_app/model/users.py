@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from recipes_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re
 
@@ -30,11 +30,11 @@ class User:
     @staticmethod
     def validate(user):
         is_valid = True
-        if len(user['first_name']) < 3:
-            flash("first name must be at least 3 characters.", "register")
+        if len(user['first_name']) < 1:
+            flash("You must have a first name.", "register")
             is_valid = False
-        if len(user['last_name']) < 3:
-            flash("Last name must be at least 3 characters.", "register")
+        if len(user['last_name']) < 1:
+            flash("You must have a last name", "register")
             is_valid = False
         if len(user['email']) < 3:
             flash("the email is not long enough", "register")
