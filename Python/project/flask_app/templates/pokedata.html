@@ -17,27 +17,47 @@
 
 <body class="bg-dark">
     <div class="page">
+        <div class="container" style="display: flex; justify-content: flex-end;">
+            <div>
+                <a href="/" class="btn btn-primary">Home</a>
+            </div>
+        </div>
         <div class="container text-light" style="display: flex;">
             <div class="left" style="flex: 1;">
                 <img src="{{pokemon.image}}" class="img" alt="..." style="height: 250px;">
                 <h1>{{pokemon.name}}</h1>
             </div>
             <div class="right" style="display: flex; flex-direction: column; flex: 4; align-items: center;">
-                <h1>information</h1>
                 <h3>Base Stats</h3>
                 <div style="display: flex;">
                     <ul>
-                        <li>HP:{{pokemon.hp}}</li>
-                        <li>Attack:{{pokemon.attack}}</li>
-                        <li>Defense:{{pokemon.defense}}</li>
+                        <li>HP: {{pokemon.hp}}</li>
+                        <li>Attack: {{pokemon.attack}}</li>
+                        <li>Defense: {{pokemon.defense}}</li>
                     </ul>
                     <ul>
-                        <li>Special Attack:{{pokemon.sp_attack}}</li>
-                        <li>Special Defense:{{pokemon.sp_defense}}</li>
-                        <li>Speed:{{pokemon.speed}}</li>
+                        <li>Special Attack: {{pokemon.sp_attack}}</li>
+                        <li>Special Defense: {{pokemon.sp_defense}}</li>
+                        <li>Speed: {{pokemon.speed}}</li>
                     </ul>
                 </div>
-
+                <h3>Information</h3>
+                <div style="display: flex;">
+                    <ul>
+                        <li>Height: {{pokemon.height}}</li>
+                        <li>Weight: {{pokemon.weight}}</li>
+                        {% if pokemon.type2 == None %}
+                        <li>type: {{pokemon.type1}}</li>
+                        {% endif %}
+                        {% if not pokemon.type2 == None %}
+                        <li>type: {{pokemon.type1}}, {{pokemon.type2}} </li>
+                        {% endif %}
+                    </ul>
+                    <ul>
+                        <li>First Game Appearance: {{pokemon.game_appearance}}</li>
+                        <li>First Ability: {{pokemon.first_ability}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
