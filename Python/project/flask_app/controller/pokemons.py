@@ -11,5 +11,3 @@ def index():
 def get_pokemon(name):
     pokemon=Pokemon.get_pokemon({"name":name})
     return render_template('pokedata.html', pokemon=pokemon)
-
-# hello

@@ -94,4 +94,3 @@ class Pokemon:
             pokemons.append(Pokemon(pokemon))
         return pokemons[0]
     
-    #  hello
