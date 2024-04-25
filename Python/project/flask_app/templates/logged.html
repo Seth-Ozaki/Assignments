@@ -18,32 +18,30 @@
 <body class="bg-dark">
     <div class="page text-light" style="padding: 0% 10%;">
         <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
-            <img src="./static/imgs/logo.png" class="card-img-top" alt="pokemon logo"
+            <img src="..\static\imgs\logo.png" class="card-img-top" alt="pokemon logo"
                 style="height: 200px; width: 400px;">
-            <div style="display:flex; align-items: center;">
-                <a href="/log" class="btn btn-primary">Log-In</a>
+            <h1>Hello, {{session['name']}} </h1>
+            <div>
+                <a class="btn btn-primary" href="/user/{{session['user_id']}}" role="button">Profile</a>
+                <a class="btn btn-primary" href="/clearcookie" role="button">Log-Out</a>
             </div>
-        </div>
-        <div style="text-align: center;">
-            {% with messages = get_flashed_messages(category_filter=["login"]) %}
-            {% if messages %}
-            {% for message in messages %}
-            <h1>{{message}}</h1>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
         </div>
         <div class="container-fluid">
             <div class="row row-cols-9">
                 {% for pokemon in pokemons %}
                 <div class="col">
                     <div class="card bg-dark text-light"
-                        style="width: 12rem; align-items: center; margin-bottom: 20px;">
+                        style="width: 10rem; align-items: center; margin-bottom: 20px;">
                         <img src="{{pokemon.image}}" class="card-img-top" alt="a picture of {{pokemon.name}}">
                         <div class="card-body">
                             <h5 class="card-title">{{pokemon.name}}</h5>
                             <a href="/pokemon/{{pokemon.name}}" class="btn btn-primary"
                                 style="display:flex; justify-content: center;">Details</a>
+                            <form action="/like" method="post" style="display: flex; justify-content: center;">
+                                <input type="hidden" name="user_id" value="{{session['user_id']}}">
+                                <input type="hidden" name="pokemon_id" value="{{pokemon.id}}">
+                                <input class="btn btn-primary" type="submit" value="Like">
+                            </form>
                         </div>
                     </div>
                 </div>

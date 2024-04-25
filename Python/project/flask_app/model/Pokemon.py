@@ -1,14 +1,16 @@
 import requests
 from pprint import pprint
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask import flash
 
-base = 'https://pokeapi.co/api/v2/pokemon?limit=151'
+base = 'https://pokeapi.co/api/v2/pokemon?limit=251'
 pokemon_url = 'https://pokeapi.co/api/v2/pokemon/'
 
 
 class Pokemon:
     DB = 'pokemon'
     def __init__(self, data):
+        self.id = data['id']
         self.name = data['name']
         self.height = data['height']
         self.image = data['image']

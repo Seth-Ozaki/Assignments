@@ -18,9 +18,15 @@
 <body class="bg-dark">
     <div class="page">
         <div class="container" style="display: flex; justify-content: flex-end;">
+            {% if 'user_id' in session %}
+            <div>
+                <a href="/logged/{{session['user_id']}}" class="btn btn-primary">Home</a>
+            </div>
+            {% else %}
             <div>
                 <a href="/" class="btn btn-primary">Home</a>
             </div>
+            {% endif %}
         </div>
         <div class="container text-light" style="display: flex;">
             <div class="left" style="flex: 1;">
