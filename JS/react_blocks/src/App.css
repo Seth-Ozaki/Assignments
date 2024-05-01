@@ -1,0 +1,54 @@
+.container {
+  width: 98%;
+  height: 94vh;
+  background-color: silver;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.header {
+  height: 150px;
+  width: 100%;
+  background-color: green;
+
+}
+
+.inline {
+  height: 100%;
+  display: flex;
+}
+
+.nav {
+  height: 300px;
+  width: 200px;
+  background-color: blue;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.main {
+  height: 82%;
+  width: 100%;
+  background-color: red;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.subcontent {
+  height: 400px;
+  width: 400px;
+  background-color: yellow;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+#ad {
+  height: 200px;
+  width: 75%;
+  background-color: purple;
+  position: relative;
+  top: 500px;
+  left: 20px;
+
+}
