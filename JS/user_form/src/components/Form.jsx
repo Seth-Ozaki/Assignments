@@ -13,6 +13,10 @@ export const Form = () => {
 
     const createUser = (e) => {
         e.preventDefault();
+        if ((firstNameError || !firstName) || (lastNameError || !lastName) || (emailError || !email) || (passwordError || !password) || (confirmPasswordError || !confirmPassword)
+        ) {
+            return;
+        }
         const user = { firstName, lastName, email, password };
         setUsers([...users, user]);
         setFirstName("");
@@ -27,7 +31,11 @@ export const Form = () => {
             "Thank you for submiting a user!"
             : "Welcome, Create a User!";
     };
-
+    const firstNameError = firstName.length < 2 && firstName.length > 0 ? "You need a first name longer than 2 characters" : "";
+    const lastNameError = lastName.length < 2 && lastName.length > 0 ? "You need a last name longer than 2 characters" : "";
+    const emailError = email.length < 8 && email.length > 0 ? "Email needs 8 characters" : "";
+    const passwordError = password.length < 8 && password.length > 0 ? "Password needs 8 characters" : "";
+    const confirmPasswordError = confirmPassword.length > 0 && confirmPassword != password ? "Passwords do not match" : "";
 
 
     return (
@@ -37,28 +45,28 @@ export const Form = () => {
                 <div>
                     <label>First Name: </label>
                     <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /> <br />
-                    {firstName.length < 2 && firstName.length > 0 ? "You need a first name" : ""}
+                    {firstNameError}
                 </div>
                 <div>
                     <label>Last Name: </label>
                     <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /><br />
-                    {lastName.length < 2 && lastName.length > 0 ? "You need a last name" : ""}
+                    {lastNameError}
                 </div>
                 <div>
                     <label>Email: </label>
                     <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-                    {email.length < 8 && email.length > 0 ? "Email needs 8 characters" : ""}
+                    {emailError}
                 </div>
                 <div>
                     <label>Password: </label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /> <br />
-                    {password.length < 8 && password.length > 0 ? "Password needs 8 characters" : ""}
+                    {passwordError}
 
                 </div>
                 <div>
                     <label>Confirm Password: </label>
                     <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /><br />
-                    {confirmPassword.length > 0 && confirmPassword != password ? "Passwords do not match" : ""}
+                    {confirmPasswordError}
                 </div>
 
                 <input type="submit" />
