@@ -67,4 +67,4 @@ app.delete("/api/users/:id", (req, res) => {
 
 
 // this needs to be below the other code blocks
-app.listen(port, () => console.log(`SERVER is up on port: ${port} and is listening for REQuests to RESpond to `));
+app.listen(port, () => console.log(`SERVER is up on port: ${port} and is listening for Requests to Respond to `));

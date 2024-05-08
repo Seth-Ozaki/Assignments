@@ -21,7 +21,7 @@ export const Planet = (props) => {
                 console.log("error", err);
                 nav("/error");
             });
-    }, []);
+    }, [planetid]);
 
     return (
         <div>

@@ -22,7 +22,7 @@ export const Character = (props) => {
                 console.log("error", err);
                 nav("/error");
             });
-    }, []);
+    }, [characterid]);
 
     return (
         <div>
