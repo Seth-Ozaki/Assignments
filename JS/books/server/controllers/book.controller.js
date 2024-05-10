@@ -19,7 +19,7 @@ const BookController = {
     readAll: async (req, res) => {
         try {
             const allBooks = await Book.find();
-            res.json({ allBooks });
+            res.json(allBooks);
         } catch (error) {
             console.log(error);
             res.status(400).json(error);

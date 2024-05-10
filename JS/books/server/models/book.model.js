@@ -6,7 +6,7 @@ const BookSchema = new Schema(
             type: String,
             required: [true, "The book must have a title!"],
             minlength: [2, "A books title must have than 2 letters!"],
-            maxlength: [15, "Whoa there buddy save it for the book!"]
+            maxlength: [20, "Whoa there buddy save it for the book!"]
         },
         author: {
             type: String,
