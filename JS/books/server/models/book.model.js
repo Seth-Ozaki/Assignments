@@ -12,7 +12,7 @@ const BookSchema = new Schema(
             type: String,
             required: [true, "Well Somebody wrote it"],
             minlength: [5, "OK but whats their full name?"],
-            maxlength: [15, "That name wont fit on the cover!"]
+            maxlength: [50, "That name wont fit on the cover!"]
         },
         pages: {
             type: Number,
