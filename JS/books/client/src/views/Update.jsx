@@ -1,41 +1,51 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from '../components/Navbar';
 
 
-export const AddBook = (props) => {
+
+export const Update = (props) => {
 
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [pages, setPages] = useState(1);
     const [isAvailable, setIsAvailable] = useState(false);
-
     const [errors, setErrors] = useState({});
-
+    const { id } = useParams();
     const nav = useNavigate();
 
-    const createBook = (e) => {
-        e.preventDefault();
-        console.log("hello");
-
-        const newBook = { title, author, pages, isAvailable };
-
-        axios.post("http://localhost:8000/api/books", newBook)
+    useEffect(() => {
+        axios.get("http://localhost:8000/api/books/" + id)
             .then((res) => {
+                setTitle(res.data.title);
+                setAuthor(res.data.author);
+                setPages(res.data.pages);
+                setIsAvailable(res.data.isAvailable);
+            })
+            .catch((err) => console.log(err));
+    }, []);
+
+    const updateBook = (e) => {
+        e.preventDefault();
+        const updatedBook = { title, author, pages, isAvailable };
+        axios.put("http://localhost:8000/api/books/" + id, updatedBook)
+            .then(res => {
                 nav("/");
             })
-            .catch((err) => {
+            .catch(err => {
                 setErrors(err.response.data.errors);
             });
 
     };
 
+
+
     return (
         <div>
-            <Navbar title={'Add Book'} />
+            <Navbar title={`Update ${title}`} />
             <div>
-                <form onSubmit={createBook}>
+                <form onSubmit={updateBook}>
                     <div>
                         <p>Title:</p>
                         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />

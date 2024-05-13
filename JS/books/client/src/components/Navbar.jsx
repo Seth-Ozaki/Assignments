@@ -1,10 +1,7 @@
-import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";;
 
 
 export const Navbar = (props) => {
-
 
     const nav = useNavigate();
 
@@ -16,7 +13,9 @@ export const Navbar = (props) => {
                 <button onClick={() => nav("/Create")}>Add Book</button>
             </div>
             <div>
-                <h1>Book Catalog</h1>
+                {
+                    props.title ? <h1>{props.title}</h1> : <h1>Book Catalog</h1>
+                }
             </div>
         </div>
     );

@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Navbar } from '../components/Navbar';
+
 
 export const OneBook = () => {
     const [book, setBook] = useState(null);
@@ -28,6 +30,7 @@ export const OneBook = () => {
         <div>
             {
                 book ? <>
+                    <Navbar title={book.title} />
                     <div>
                         <h2 style={{ fontWeight: "bold" }}>{book.title}</h2>
                         <h4>By {book.author}</h4>
@@ -41,7 +44,6 @@ export const OneBook = () => {
                             : <div style={{ color: "tomato" }}>Not available</div>
                         }
                     </div>
-
                 </>
                     : <h1>...Loading</h1>
             }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Navbar } from '../components/Navbar';
+
 
 export const Home = (props) => {
     const [books, setBooks] = useState([]);
@@ -15,6 +17,7 @@ export const Home = (props) => {
 
     return (
         <div>
+            <Navbar />
             <table>
                 <thead>
                     <tr>
@@ -32,7 +35,7 @@ export const Home = (props) => {
                                 <td>{book.title}</td>
                                 <td>{book.author}</td>
                                 <td>{book.pages}</td>
-                                <td>{book.isAvailable ? "✔" : "❌"}</td>
+                                <td>{book.isAvailable ? "✔" : "❌"} <Link to={"/update/" + book._id}> Edit</Link></td>
                                 <td><Link to={"/books/" + book._id}>Book details</Link></td>
                             </tr>;
                         })
