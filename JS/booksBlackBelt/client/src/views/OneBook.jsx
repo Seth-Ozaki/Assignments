@@ -2,6 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navbar } from '../components/Navbar';
+import { getOne } from "../services/bookService";
+import { deleteThisBook } from "../services/bookService";
 
 
 export const OneBook = () => {
@@ -9,23 +11,22 @@ export const OneBook = () => {
     const { id } = useParams();
     const nav = useNavigate();
     useEffect(() => {
-        axios.get("http://localhost:8000/api/books/" + id)
+        getOne(id)
             .then((res) => {
-                setBook(res.data);
+                setBook(res);
             })
             .catch((err) => console.log(err));
     }, []);
 
     const deleteBook = (bookID) => {
-        console.log(bookID);
-        axios.delete("http://localhost:8000/api/books/" + id)
+        deleteThisBook(bookID)
             .then((res) => {
                 nav("/");
             })
             .catch((err) => console.log(err));
     };
 
-//usenav inside is a stack where you can pass state
+    //usenav inside is a stack where you can pass state
     return (
         <div>
             {

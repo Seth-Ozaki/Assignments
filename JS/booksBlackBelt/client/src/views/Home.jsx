@@ -1,0 +1,47 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar } from '../components/Navbar';
+import { getAll } from '../services/bookService';
+
+
+export const Home = (props) => {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        getAll()
+            .then((res) => {
+                setBooks(res);
+            })
+            .catch(err => console.log(err));
+    }, []);
+
+    return (
+        <div>
+            <Navbar />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Page Count</th>
+                        <th>Available</th>
+                        <th>Book Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        books.map((book) => {
+                            return <tr key={book._id}>
+                                <td>{book.title}</td>
+                                <td>{book.author}</td>
+                                <td>{book.pages}</td>
+                                <td>{book.isAvailable ? "✔" : "❌"} <Link to={"/update/" + book._id}> Edit</Link></td>
+                                <td><Link to={"/books/" + book._id}>Book details</Link></td>
+                            </tr>;
+                        })
+                    }
+                </tbody>
+            </table>
+        </div>
+    );
+};
