@@ -14,7 +14,10 @@ export const Home = (props) => {
             })
             .catch(err => console.log(err));
     }, []);
-
+    const style1 = (meal) => {
+        console.log(meal.ingredientTwo === undefined
+        );
+    };
     return (
         <>
             <Navbar name={'home'} />
@@ -34,7 +37,11 @@ export const Home = (props) => {
                         {
                             meals.map((meal) => {
                                 return <tr key={meal._id}>
-                                    <td>{meal.dish}</td>
+                                    {
+                                        meal.ingredientOne && meal.ingredientTwo && meal.ingredientThree ?
+                                            <td>{meal.dish}⭐</td>
+                                            : <td>{meal.dish}</td>
+                                    }
                                     <td>{meal.time}</td>
                                     <td><Link to={`/meals/${meal._id}/details`}>Details</Link> | <Link to={`/meals/${meal._id}/edit`}>Edit</Link></td>
                                 </tr>;

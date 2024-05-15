@@ -66,18 +66,33 @@ export const Update = (props) => {
                             <h3>Meal</h3>
                             <div>
                                 <p>Dish Name:</p>
-                                <input type="text" value={mealState.dish} name="dish" onChange={handleChange} />
-                                {errors.dish && <p>{errors.dish.message}</p>}
+                                {errors.dish === undefined ?
+                                    <input type="text" value={mealState.dish} name="dish" onChange={handleChange} />
+                                    : <>
+                                        <input style={{ border: "2px solid red", background: "transparent" }} type="text" value={mealState.dish} name="dish" onChange={handleChange} />
+                                        {errors.dish && <p style={{ color: "red" }}>{errors.dish.message}</p>}
+                                    </>
+                                }
                             </div>
                             <div>
                                 <p>Cook Time:</p>
-                                <input type="text" value={mealState.time} name="time" onChange={handleChange} />
-                                {errors.time && <p>{errors.time.message}</p>}
+                                {errors.time === undefined ?
+                                    <input type="text" value={mealState.time} name="time" onChange={handleChange} />
+                                    : <>
+                                        <input style={{ border: "2px solid red", background: "transparent" }} type="text" value={mealState.time} name="time" onChange={handleChange} />
+                                        {errors.time && <p style={{ color: "red" }}>{errors.time.message}</p>}
+                                    </>
+                                }
                             </div>
                             <div>
                                 <p>Directions:</p>
-                                <input type="text" value={mealState.directions} name="directions" onChange={handleChange} />
-                                {errors.directions && <p>{errors.directions.message}</p>}
+                                {errors.directions === undefined ?
+                                    <input type="text" value={mealState.directions} name="directions" onChange={handleChange} />
+                                    : <>
+                                        <input style={{ border: "2px solid red", background: "transparent" }} type="text" value={mealState.directions} name="directions" onChange={handleChange} />
+                                        {errors.directions && <p style={{ color: "red" }}>{errors.directions.message}</p>}
+                                    </>
+                                }
                             </div>
                         </div>
                         <div>
@@ -102,3 +117,4 @@ export const Update = (props) => {
         </div >
     );
 };
+
